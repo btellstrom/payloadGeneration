@@ -1,0 +1,16 @@
+Idea for hashtable:
+
+construction (size, maxlength):
+    create array table of set length size
+    create an arrayWithIndex of length maxlength in each of the arrays in table
+
+methods:
+    add(element) 
+        value = hash(element) % size
+        table[value].add() = element;
+
+     getArray(index)
+        return table[index]
+    
+    getHash(element)
+        return hash(element)
