@@ -13,9 +13,37 @@ public class Main {
 		 * file for payload
 		 */
 		//TODO make flags to add the ability to choose these fields. 
-		int size = 100;
-		int maxLength = 10;
+		int size = 1024;
+		int maxLength = 100;
 		String filename = "./payload.csv";
+		
+		int index = 0; 
+		for(String arg: args) {
+			if (arg.contains("--size")) {
+				size = Integer.parseInt(args[index+1]);
+			}
+			if(arg.contains("--length")) {
+				maxLength = Integer.parseInt(args[index+1]);
+			}
+			if(arg.contains("--file")) {
+				filename = args[index+1];
+			}
+			if(arg.contains("--help")) {
+				System.out.println("Usage java -jar target/... ["
+						+ "<switches>...]");
+				System.out.println();
+				System.out.println("<Switches>");
+				System.out.println("--help : display this help");
+				System.out.println("--size : sets the size of the hashtable."
+						+ " Default 1024");
+				System.out.println("--length : sets the length of the payload. "
+						+ "Default 100");
+				System.out.println("--file : sets the file to write the payload to."
+						+ " Default payload.csv");
+				System.exit(0);
+			}
+			index++;
+		}
 		
 		Hashtable table = new Hashtable(size, maxLength);
 		
@@ -29,6 +57,7 @@ public class Main {
 		StringBuilder element;
 		
 		while (true){
+			// If iterations > size*maxLength we've reached an infinite loop.
 			iterations++;
 			/*
 			 * Sets the length of our string
