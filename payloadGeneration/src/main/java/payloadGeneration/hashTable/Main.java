@@ -1,8 +1,6 @@
 package payloadGeneration.hashTable;
 
-import static java.nio.file.StandardOpenOption.*;
 import java.io.*;
-import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,32 +12,36 @@ public class Main {
 		 * length of payload
 		 * file for payload
 		 */
-		int size = 1024;
-		int maxLength = 100;
-		Path p = Paths.get("./payload.csv");
-		
+		//TODO make flags to add the ability to choose these fields. 
+		int size = 100;
+		int maxLength = 10;
+		String filename = "./payload.csv";
 		
 		Hashtable table = new Hashtable(size, maxLength);
 		
 		int elementLength = 15;
-		
 		int length;
 		Random rand = new Random();
 		
 		ArrayList<String> array;
 		
+		int iterations = 0;
+		StringBuilder element;
+		
 		while (true){
+			iterations++;
 			/*
 			 * Sets the length of our string
 			 */
 			length = rand.nextInt(elementLength-1) + 1;
-			StringBuilder element = new StringBuilder(length);
+			element = new StringBuilder(length);
 			/*
 			 * Adds the next char to our element. 16^4 is the highest number for 
 			 * char.
 			 */
-			for(int i = 0; i == length; i++) {
-				element.append((char) rand.nextInt(16*16*16*16-1));
+			for(int i = 0; i < length; i++) {
+				String str = Character.toString((char) (rand.nextInt(207) + 48));
+				element.append(str);
 			}
 			try {
 				table.add(element.toString());
@@ -47,21 +49,24 @@ public class Main {
 				array = table.getArray(element.toString());
 				break;
 			}
+			if(iterations > size*maxLength) {
+				System.out.println("The program got stuck in an infinite loop.");
+				System.exit(0);
+			}
 		}
 		
 		try{
-			OutputStream out = new BufferedOutputStream(
-					Files.newOutputStream(p, CREATE, WRITE));
-			for (int i = 0; i == length; i++) {
-				out.write(array.get(i).getBytes());
+			PrintWriter out = new PrintWriter(filename);
+			for (int i = 0; i < maxLength; i++) {
+				out.println(array.get(i));
 				if (i< (length -1)) {
-					out.write(",".getBytes());
+					out.write(",");
 				}
 			}
-		}catch(IOException e) {
+			out.close();
+		}catch(FileNotFoundException e) {
 			System.out.println("Something was wrong with the file");
-		}
-			
+		}	
 	}
 
 }

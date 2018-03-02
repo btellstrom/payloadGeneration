@@ -3,7 +3,9 @@ package payloadGeneration.hashTable;
 import java.util.ArrayList;
 
 /**
- * Hello world!
+ * A hashtable that merely stores whatever element is put in at it's given
+ * hashlocation. No collection detection, just list. Throws error if 
+ * the inner list becomes too large.
  *
  */
 public class Hashtable {
@@ -12,14 +14,14 @@ public class Hashtable {
     private ArrayList<ArrayList<String>> table; 
 	
 	public Hashtable(int size, int maxLength) {
-
+		//TODO add parameter that chooses which hashfucntion to be used
 		this.size = size;
 		this.maxLength = maxLength;
 		table = new ArrayList<ArrayList<String>>(size);
 		
 		ArrayList<String> list;
 		
-		for(int i = 0; i < size - 1; i++) {
+		for(int i = 0; i < size; i++) {
 			list = new ArrayList<String>(maxLength);
 			table.add(list);
 		}
@@ -31,7 +33,7 @@ public class Hashtable {
 		ArrayList<String> list = table.get(value);
 		if(list.size() +1 == maxLength) {
 			list.add(element);
-			//throw new IndexOutOfBoundsException();
+			throw new IndexOutOfBoundsException();
 		}
 		else {
 			list.add(element);
@@ -49,7 +51,7 @@ public class Hashtable {
 	public int getHash(String element){
 		//TODO implement hashfunctions other than native
 		assert(element != null):"String is null";
-		return (element.hashCode() % size);
+		return ((element.hashCode() & 0x7FFFFFFF) % (size));
 	}
 	
 	public ArrayList<String> getArray(int index) {
