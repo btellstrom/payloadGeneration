@@ -19,22 +19,24 @@ java -jar target/hashTable-0.0.1-SNAPSHOT.jar
 
 possible switches are:
 
+
+Shows all switches and their usage
 ```
 --help
 ```
-Shows all switches and their usage
 
+
+sets the size of the hashtable
 ```
 --size
 ```
-sets the size of the hashtable
 
+sets the length of the hashtable
 ```
 --length
 ```
-sets the length of the hashtable
 
+sets the payload file
 ```
 --file
 ```
-sets the payload file
