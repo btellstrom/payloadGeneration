@@ -13,5 +13,6 @@ mvn install
 ```
 
 ## Usage
-
+```
 java -jar target/hashTable-0.0.1-SNAPSHOT.jar
+```
