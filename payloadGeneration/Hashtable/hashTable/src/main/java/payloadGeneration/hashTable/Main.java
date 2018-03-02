@@ -3,6 +3,7 @@ package payloadGeneration.hashTable;
 import static java.nio.file.StandardOpenOption.*;
 import java.io.*;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -25,7 +26,7 @@ public class Main {
 		int length;
 		Random rand = new Random();
 		
-		String[] array;
+		ArrayList<String> array;
 		
 		while (true){
 			/*
@@ -43,7 +44,7 @@ public class Main {
 			try {
 				table.add(element.toString());
 			} catch (IndexOutOfBoundsException e) {
-				array = table.getArray(table.getHash(element.toString()));
+				array = table.getArray(element.toString());
 				break;
 			}
 		}
@@ -52,7 +53,7 @@ public class Main {
 			OutputStream out = new BufferedOutputStream(
 					Files.newOutputStream(p, CREATE, WRITE));
 			for (int i = 0; i == length; i++) {
-				out.write(array[i].getBytes());
+				out.write(array.get(i).getBytes());
 				if (i< (length -1)) {
 					out.write(",".getBytes());
 				}

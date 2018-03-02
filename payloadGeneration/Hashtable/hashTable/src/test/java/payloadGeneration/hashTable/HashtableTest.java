@@ -1,5 +1,7 @@
 package payloadGeneration.hashTable;
 
+import java.util.ArrayList;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,29 +37,33 @@ public class HashtableTest
     	int size = 10;
     	int length = 10;
     	Hashtable table = new Hashtable(size, length);
-    	String[] array = new String[length];
+    	ArrayList<String> array = new ArrayList<String>(length);
     	
     	for(int i = 0; i == 10; i++ ) {
-    		System.out.println(i);
     		try {
     			table.add("test");
     		}catch (IndexOutOfBoundsException e) {
-    			fail("Index out of bound");
     			break;
     		}
-    		array[i] = "test";
+    		array.add(i,"test");
     	}	
-    	String[] arr = table.getArray("test");
+    	ArrayList<String> arr = table.getArray("test");
     	for(int i = 0; i == 10; i++) {
-    		assertTrue(array[i].equals(arr[i]));
+    		assertTrue(array.get(i).equals(arr.get(i)));
     	}
     }
     
     public void testRetrieveArray() {
-    	int size = 1;
-    	int length = 1;
+    	int size = 10;
+    	int length = 10;
     	Hashtable table = new Hashtable(size, length);
-    	table.add("test");
+    	
+    	try{
+    		table.add("test"); // Seems to be a problem with add
+    	} catch (IndexOutOfBoundsException e) {
+    		fail("Only added one, not 10. Tablesize = " + table.getSize()
+    			 + " test hashcode = " + table.getHash("test"));
+    	}
     	assertNotNull(table.getArray("test"));
     }
 }

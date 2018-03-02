@@ -1,14 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: payloadGeneration.hashTable.HashtableTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
-testRetrieveArray(payloadGeneration.hashTable.HashtableTest)  Time elapsed: 0.002 sec  <<< ERROR!
-java.lang.NullPointerException
-	at payloadGeneration.hashTable.Hashtable.add(Hashtable.java:23)
-	at payloadGeneration.hashTable.HashtableTest.testRetrieveArray(HashtableTest.java:60)
-
-testOutOfBounds(payloadGeneration.hashTable.HashtableTest)  Time elapsed: 0 sec  <<< ERROR!
-java.lang.AssertionError: table element is null
-	at payloadGeneration.hashTable.Hashtable.getArray(Hashtable.java:47)
-	at payloadGeneration.hashTable.HashtableTest.testOutOfBounds(HashtableTest.java:50)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec

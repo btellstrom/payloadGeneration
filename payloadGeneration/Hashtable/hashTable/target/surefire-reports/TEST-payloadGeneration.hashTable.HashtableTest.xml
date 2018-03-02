@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="payloadGeneration.hashTable.HashtableTest" time="0.002" errors="2" skipped="0">
+<testsuite tests="2" failures="0" name="payloadGeneration.hashTable.HashtableTest" time="0.019" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.162-b12"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/benjamin/KTH/KEX/payload_generation/Hashtable/hashTable"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/benjamin/KTH/KEX/gitStuff/payloadGeneration/Hashtable/hashTable"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/benjamin/KTH/KEX/payload_generation/Hashtable/hashTable"/>
+    <property name="user.dir" value="/home/benjamin/KTH/KEX/gitStuff/payloadGeneration/Hashtable/hashTable"/>
     <property name="java.runtime.version" value="1.8.0_162-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk/jre/lib/endorsed"/>
@@ -25,7 +25,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/benjamin/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf7049986074350718969.tmp"/>
+    <property name="classworlds.conf" value="/home/benjamin/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4959478209452258163.tmp"/>
     <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -52,23 +52,13 @@
     <property name="securerandom.source" value="file:/dev/./urandom"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/home/benjamin/KTH/KEX/payload_generation/Hashtable/hashTable/EMBEDDED"/>
+    <property name="maven.home" value="/home/benjamin/KTH/KEX/gitStuff/payloadGeneration/Hashtable/hashTable/EMBEDDED"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testRetrieveArray" time="0.002">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at payloadGeneration.hashTable.Hashtable.add(Hashtable.java:23)
-	at payloadGeneration.hashTable.HashtableTest.testRetrieveArray(HashtableTest.java:60)
-</error>
-  </testcase>
-  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0">
-    <error message="table element is null" type="java.lang.AssertionError">java.lang.AssertionError: table element is null
-	at payloadGeneration.hashTable.Hashtable.getArray(Hashtable.java:47)
-	at payloadGeneration.hashTable.HashtableTest.testOutOfBounds(HashtableTest.java:50)
-</error>
-  </testcase>
+  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testRetrieveArray" time="0.019"/>
+  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
 </testsuite>
