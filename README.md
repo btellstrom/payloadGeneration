@@ -3,14 +3,14 @@
 ## Download & Install
 
 Clone project:
-'''
+```
 git clone https://github.com/btellstrom/payloadGeneration
-'''
+```
 
 Installation:
-´´´
+```
 mvn install
-´´´
+```
 
 ## Usage
 
