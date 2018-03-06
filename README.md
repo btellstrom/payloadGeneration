@@ -26,12 +26,12 @@ Show all switches and their usage
 ```
 
 
-set the size of the hashtable
+set the capacity of the hashtable
 ```
 --size
 ```
 
-set the length of the hashtable
+set the number of collisions wanted
 ```
 --length
 ```
