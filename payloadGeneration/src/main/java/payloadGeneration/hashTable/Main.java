@@ -69,7 +69,7 @@ public class Main {
 			 * char.
 			 */
 			for(int i = 0; i < length; i++) {
-				String str = Character.toString((char) (rand.nextInt(93) + 33));
+				String str = Character.toString((char) (rand.nextInt(78) + 47));
 				element.append(str);
 			}
 			try {
@@ -87,9 +87,9 @@ public class Main {
 		try{
 			PrintWriter out = new PrintWriter(filename);
 			for (int i = 0; i < maxLength; i++) {
-				out.println(array.get(i));
-				if (i< (length -1)) {
-					out.write(",");
+				out.print(array.get(i));
+				if (i< (maxLength -1)) {
+					out.print(",");
 				}
 			}
 			out.close();

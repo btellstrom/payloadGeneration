@@ -50,8 +50,9 @@ public class Hashtable {
 	
 	public int getHash(String element){
 		//TODO implement hashfunctions other than native
+		int h;
 		assert(element != null):"String is null";
-		return ((element.hashCode() & 0x7FFFFFFF) % (size));
+		return (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16) % size;
 	}
 	
 	public ArrayList<String> getArray(int index) {
