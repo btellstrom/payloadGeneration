@@ -62,14 +62,14 @@ public class Main {
 			/*
 			 * Sets the length of our string
 			 */
-			length = rand.nextInt(elementLength-1) + 1;
+			length = rand.nextInt(elementLength-5) + 5;
 			element = new StringBuilder(length);
 			/*
 			 * Adds the next char to our element. 16^4 is the highest number for 
 			 * char.
 			 */
 			for(int i = 0; i < length; i++) {
-				String str = Character.toString((char) (rand.nextInt(207) + 48));
+				String str = Character.toString((char) (rand.nextInt(93) + 33));
 				element.append(str);
 			}
 			try {
