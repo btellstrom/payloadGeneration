@@ -2,6 +2,7 @@ package payloadGeneration.hashTable;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Main {

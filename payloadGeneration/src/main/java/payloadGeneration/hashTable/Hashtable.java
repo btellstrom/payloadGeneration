@@ -12,7 +12,7 @@ public class Hashtable {
 	private int size;
     private int maxLength;
     private ArrayList<ArrayList<String>> table; 
-	
+    
 	public Hashtable(int size, int maxLength) {
 		//TODO add parameter that chooses which hashfucntion to be used
 		this.size = size;
@@ -50,9 +50,11 @@ public class Hashtable {
 	
 	public int getHash(String element){
 		//TODO implement hashfunctions other than native
+		
+		
 		int h;
 		assert(element != null):"String is null";
-		return (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16) % size;
+		return ((size-1) &( (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16)));
 	}
 	
 	public ArrayList<String> getArray(int index) {
