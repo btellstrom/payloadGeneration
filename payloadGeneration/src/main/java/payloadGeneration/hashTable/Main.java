@@ -1,12 +1,20 @@
 package payloadGeneration.hashTable;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
 
+	public static class HashOrder implements Comparator<String>{
+		public HashOrder() {
+		}
+		public int compare(String str1, String str2) {
+			int hash1 = str1.hashCode();
+			int hash2 = str2.hashCode();
+			return hash1-hash2;
+		}
+	}
+	
 	public static void main(String[] args) {
 		/*
 		 * size of table
@@ -17,6 +25,8 @@ public class Main {
 		int size = 1024;
 		int maxLength = 100;
 		String filename = "./payload.csv";
+		
+		HashOrder order = new HashOrder();
 		
 		int index = 0; 
 		for(String arg: args) {
@@ -52,10 +62,10 @@ public class Main {
 		int length;
 		Random rand = new Random();
 		
-		ArrayList<String> array;
+		String[] array;
 		
 		int iterations = 0;
-		StringBuilder element;
+		String element;
 		
 		while (true){
 			// If iterations > size*maxLength we've reached an infinite loop.
@@ -64,19 +74,12 @@ public class Main {
 			 * Sets the length of our string
 			 */
 			length = rand.nextInt(elementLength-5) + 5;
-			element = new StringBuilder(length);
-			/*
-			 * Adds the next char to our element. 16^4 is the highest number for 
-			 * char.
-			 */
-			for(int i = 0; i < length; i++) {
-				String str = Character.toString((char) (rand.nextInt(78) + 47));
-				element.append(str);
-			}
+			element = RandomMessage.getNextMessage(length);
+		
 			try {
-				table.add(element.toString());
+				table.add(element);
 			} catch (IndexOutOfBoundsException e) {
-				array = table.getArray(element.toString());
+				array = table.getArray(element);
 				break;
 			}
 			if(iterations > size*maxLength) {
@@ -85,10 +88,12 @@ public class Main {
 			}
 		}
 		
+		Arrays.sort(array, order);
+		
 		try{
 			PrintWriter out = new PrintWriter(filename);
 			for (int i = 0; i < maxLength; i++) {
-				out.print(array.get(i));
+				out.print(array[i]);
 				if (i< (maxLength -1)) {
 					out.print(",");
 				}

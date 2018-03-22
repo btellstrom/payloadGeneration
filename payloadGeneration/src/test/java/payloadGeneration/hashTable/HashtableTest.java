@@ -47,9 +47,9 @@ public class HashtableTest
     		}
     		array.add(i,"test");
     	}	
-    	ArrayList<String> arr = table.getArray("test");
+    	String[] arr = table.getArray("test");
     	for(int i = 0; i == 10; i++) {
-    		assertTrue(array.get(i).equals(arr.get(i)));
+    		assertTrue(array.get(i).equals(arr[i]));
     	}
     }
     
@@ -59,7 +59,7 @@ public class HashtableTest
     	Hashtable table = new Hashtable(size, length);
     	
     	try{
-    		table.add("test"); // Seems to be a problem with add
+    		table.add("test"); 
     	} catch (IndexOutOfBoundsException e) {
     		fail("Only added one, not 10. Tablesize = " + table.getSize()
     			 + " test hashcode = " + table.getHash("test"));

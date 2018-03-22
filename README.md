@@ -9,7 +9,7 @@ git clone https://github.com/btellstrom/payloadGeneration
 
 Installation:
 ```
-mvn install
+mvn test
 ```
 
 ## Usage

@@ -1,6 +1,7 @@
 package payloadGeneration.hashTable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A hashtable that merely stores whatever element is put in at it's given
@@ -42,7 +43,7 @@ public class Hashtable {
 	
 	public void add(int pos, String element) throws IndexOutOfBoundsException {
 		try {
-			getArray(pos).add(element);
+			table.get(pos).add(element);
 		} catch(IndexOutOfBoundsException e) {
 			throw new IndexOutOfBoundsException();
 		}
@@ -57,12 +58,16 @@ public class Hashtable {
 		return ((size-1) &( (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16)));
 	}
 	
-	public ArrayList<String> getArray(int index) {
-		return table.get(index);
+	public String[] getArray(int index) {
+		String[] retArray = Arrays.copyOf(table.get(index).toArray(), 
+				table.get(index).size(), String[].class);
+		return retArray;
 	}
 	
-	public ArrayList<String> getArray(String element) {
-		return table.get(getHash(element));
+	public String[] getArray(String element) {
+		String[] retArray = Arrays.copyOf(table.get(getHash(element)).toArray(), 
+				table.get(getHash(element)).size(), String[].class);
+		return retArray;
 	}
 	
 	public int getSize() {
