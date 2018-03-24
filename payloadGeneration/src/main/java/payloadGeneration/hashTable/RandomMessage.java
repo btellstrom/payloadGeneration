@@ -3,13 +3,14 @@ package payloadGeneration.hashTable;
 import java.util.Random;
 
 public class RandomMessage {
-	public static Random rand = new Random();
+	private static Random rand = new Random();
 	
 	public static String getNextMessage(int length) {
-		StringBuilder str = new StringBuilder(length);
+		StringBuilder sb = new StringBuilder(length);
 		for(int i=0; i<length; i++) {
-			str.append(Character.toString((char) (rand.nextInt(78) + 47)));
+			sb.append(Character.toString((char) (rand.nextInt(25) + 65)));
 		}
-		return str.toString();
+		
+		return sb.toString();
 	}
 }

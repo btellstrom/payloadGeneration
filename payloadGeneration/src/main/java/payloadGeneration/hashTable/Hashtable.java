@@ -30,7 +30,7 @@ public class Hashtable {
 	
 	public void add(String element) throws IndexOutOfBoundsException{
 		//TODO fix this method. Seems to not add to array properly1
-		int value = getHash(element);
+		int value = (size-1) & getHash(element);
 		ArrayList<String> list = table.get(value);
 		if(list.size() +1 == maxLength) {
 			list.add(element);
@@ -55,7 +55,7 @@ public class Hashtable {
 		
 		int h;
 		assert(element != null):"String is null";
-		return ((size-1) &( (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16)));
+		return ( (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16));
 	}
 	
 	public String[] getArray(int index) {
@@ -65,8 +65,8 @@ public class Hashtable {
 	}
 	
 	public String[] getArray(String element) {
-		String[] retArray = Arrays.copyOf(table.get(getHash(element)).toArray(), 
-				table.get(getHash(element)).size(), String[].class);
+		String[] retArray = Arrays.copyOf(table.get((size-1) & getHash(element)).toArray(), 
+				table.get((size-1) & getHash(element)).size(), String[].class);
 		return retArray;
 	}
 	

@@ -1,6 +1,5 @@
 package payloadGeneration.hashTable;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import junit.framework.Test;
@@ -36,7 +35,7 @@ public class RandomMessageTest
      */
     public void testLength(){
     	Random rand = new Random();
-    	int length = rand.nextInt();
+    	int length = rand.nextInt(10);
     	assertEquals(length, RandomMessage.getNextMessage(length).length());
     }
 }
