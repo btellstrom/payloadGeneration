@@ -66,4 +66,29 @@ public class HashtableTest
     	}
     	assertNotNull(table.getArray("test"));
     }
+    
+    public void testSameHash() {
+    	int size = 16;
+    	int length = 10;
+    	Hashtable table = new Hashtable(size, length);
+    	String[] retArray;
+    	String element;
+    	int h;
+    	
+    	while (true) {
+    		element = RandomMessage.getNextMessage(10);
+    		try {
+    			table.add(element);
+    		}
+    		catch(IndexOutOfBoundsException e) {
+    			retArray = table.getArray(element);
+    			break;
+    		}
+    	}
+    	for(String str: retArray) {
+    		assertEquals((size-1) & table.getHash(str), (size-1) & table.getHash(element));
+    		assertEquals( table.getHash(str),
+    				((str == null) ? 0 : (h = str.hashCode()) ^ (h >>> 16) ));
+    	}
+    }
 }

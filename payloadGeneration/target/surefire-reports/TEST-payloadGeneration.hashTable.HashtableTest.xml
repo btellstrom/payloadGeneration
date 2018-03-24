@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="payloadGeneration.hashTable.HashtableTest" time="0" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="payloadGeneration.hashTable.HashtableTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk/jre/lib/amd64"/>
@@ -25,24 +25,26 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/benjamin/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf114950621137572279.tmp"/>
+    <property name="classworlds.conf" value="/opt/maven/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/opt/maven/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="4.15.10-1-ARCH"/>
+    <property name="library.jansi.path" value="/opt/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/benjamin"/>
     <property name="user.timezone" value="Europe/Stockholm"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="file.encoding" value="ANSI_X3.4-1968"/>
     <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
     <property name="user.name" value="benjamin"/>
-    <property name="java.class.path" value="/usr/lib/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="/opt/maven/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-openjdk/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -52,7 +54,7 @@
     <property name="securerandom.source" value="file:/dev/./urandom"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/home/benjamin/KTH/KEX/gitStuff/payloadGeneration/EMBEDDED"/>
+    <property name="maven.home" value="/opt/maven"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,4 +63,5 @@
   </properties>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testRetrieveArray" time="0"/>
+  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testSameHash" time="0"/>
 </testsuite>

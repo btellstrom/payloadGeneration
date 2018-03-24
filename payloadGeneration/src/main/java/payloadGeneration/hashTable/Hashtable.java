@@ -13,9 +13,18 @@ public class Hashtable {
 	private int size;
     private int maxLength;
     private ArrayList<ArrayList<String>> table; 
+	static final int MAXIMUM_CAPACITY = 1 << 30;
     
 	public Hashtable(int size, int maxLength) {
 		//TODO add parameter that chooses which hashfucntion to be used
+		// set size
+		int n = size-1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        this.size = (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 		this.size = size;
 		this.maxLength = maxLength;
 		table = new ArrayList<ArrayList<String>>(size);
@@ -55,7 +64,7 @@ public class Hashtable {
 		
 		int h;
 		assert(element != null):"String is null";
-		return ( (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16));
+		return (element == null) ? 0 : (h = element.hashCode()) ^ (h >>> 16);
 	}
 	
 	public String[] getArray(int index) {
