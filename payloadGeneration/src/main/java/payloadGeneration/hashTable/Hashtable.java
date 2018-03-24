@@ -25,7 +25,6 @@ public class Hashtable {
         n |= n >>> 8;
         n |= n >>> 16;
         this.size = (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
-		this.size = size;
 		this.maxLength = maxLength;
 		table = new ArrayList<ArrayList<String>>(size);
 		
