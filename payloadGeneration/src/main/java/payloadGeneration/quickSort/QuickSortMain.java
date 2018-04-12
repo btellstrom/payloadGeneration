@@ -8,7 +8,8 @@ public class QuickSortMain {
 	public static void QSmain(String[] args) {
 		int length = 1000;
 		int[] list;
-		String filename = "~/output.csv";
+		int order = 1;
+		String filename = "./payload.csv";
 		
 		int index = 0;
 		for(String arg: args) {
@@ -18,9 +19,12 @@ public class QuickSortMain {
 			if (arg.contains("--file")) {
 				filename = args[index+1];
 			}
+			if (arg.contains("--order")) {
+				order = Integer.parseInt(args[index+1]);
+			}
 			index++;
 		}
-		list = ListGenerator.generateList(length);
+		list = ListGenerator.generateList(length, order);
 		
 		try{
 			PrintWriter out = new PrintWriter(filename);
@@ -33,6 +37,7 @@ public class QuickSortMain {
 			out.close();
 		}catch(FileNotFoundException e) {
 			System.out.println("Something was wrong with the file");
+			System.out.println(e.getMessage());
 		}		
 	}
 }

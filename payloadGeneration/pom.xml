@@ -7,7 +7,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>hashTable</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -37,11 +36,12 @@
     			<archive>
     				<manifest>
     					<addClasspath>true</addClasspath>
-    					<mainClass>payloadGeneration.hashTable.Main</mainClass>
+    					<mainClass>payloadGeneration.main.Main</mainClass>
     				</manifest>
     			</archive>
     		</configuration>
   		</plugin>
   	</plugins>
   </build>
+  <name>payloadGeneration</name>
 </project>

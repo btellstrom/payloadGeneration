@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testRetrieveArray" time="0"/>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testSameHash" time="0"/>
-  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
 </testsuite>
