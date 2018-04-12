@@ -54,8 +54,8 @@ public class ListGenerator {
 		Integer[] sorted = Arrays.stream(list).boxed().toArray( Integer[]::new );
 		Arrays.sort(sorted, order);
 		for (int i = 0; i<(list.length/2); i++) {
-			ret[i] = sorted[i + list.length/2];
-			ret[i + list.length/2] = sorted[i];
+			ret[i] = sorted[i + list.length/2].intValue();
+			ret[i + list.length/2] = sorted[i].intValue();
 		}
 		return ret;
 	}

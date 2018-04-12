@@ -36,7 +36,7 @@
     			<archive>
     				<manifest>
     					<addClasspath>true</addClasspath>
-    					<mainClass>payloadGeneration.main.Main</mainClass>
+    					<mainClass>payloadGeneration.payloadGeneration.main.Main</mainClass>
     				</manifest>
     			</archive>
     		</configuration>
