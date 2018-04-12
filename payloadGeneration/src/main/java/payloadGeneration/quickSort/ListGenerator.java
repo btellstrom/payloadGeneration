@@ -63,10 +63,11 @@ public class ListGenerator {
 			sorted.add(list[i]);
 		}
 		Collections.sort(sorted);
-		for(int i = 0; i < Math.round(((float)list.length)/2); i++) {
-			ret[i] = sorted.get(i + list.length/2);
-			ret[i + list.length/2] = sorted.get(i);
+		for (int i = 1; i <list.length; i++) {
+			ret[i] = sorted.get(i).intValue();
 		}
+		int largest = ret[list.length-1];
+		ret[list.length/2] = largest;
 		return ret;
 	}
 }
