@@ -57,33 +57,11 @@ public class ListGenerator {
 		for (int i = 0; i < list.length; i++) {
 			sorted.add(list[i]);
 		}
-		Collections.sort(sorted, order);
+		Collections.sort(sorted);
 		for(int i = 0; i < list.length/2; i++) {
 			ret[i] = sorted.get(i + list.length/2);
 			ret[i + list.length/2] = sorted.get(i);
 		}
-		
-		/*
-		float index = (list.length-1)/2;
-		ret[Math.round(index)] = sorted.get(sorted.size() -1).intValue();
-		sorted.remove(sorted.size() -1);
-		index = index/2;
-		placeAtHalf(index + index/2, ret, sorted);
-		placeAtHalf(index/2, ret, sorted);
-		*/
 		return ret;
-	}
-	private static void placeAtHalf(float index, int[] ret, ArrayList<Integer> sorted) {
-		if (Math.round(index) == 0) {
-			
-		}
-		else {
-			ret[Math.round(index) + Math.round(index/2)] = sorted.get(sorted.size() -1).intValue();
-			sorted.remove(sorted.size() -1);
-			ret[Math.round(index) - Math.round(index/2)] = sorted.get(sorted.size() -1).intValue();
-			sorted.remove(sorted.size() -1);
-			placeAtHalf(index/2, ret, sorted);
-			placeAtHalf(index/2 + index, ret, sorted);
-		}
 	}
 }
