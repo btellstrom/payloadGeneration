@@ -1,6 +1,8 @@
 package payloadGeneration.quickSort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 
@@ -51,12 +53,28 @@ public class ListGenerator {
 	}
 	private static int[] sortWorstCaseMiddle (int[] list) {
 		int[] ret = new int[list.length];
-		Integer[] sorted = Arrays.stream(list).boxed().toArray( Integer[]::new );
-		Arrays.sort(sorted, order);
-		for (int i = 0; i<(list.length/2); i++) {
-			ret[i] = sorted[i + list.length/2].intValue();
-			ret[i + list.length/2] = sorted[i].intValue();
-		}
+		ArrayList<Integer> sorted = new ArrayList<Integer>(list.length);
+		Collections.sort(sorted, order);
+		
+		float index = list.length/2;
+		ret[Math.round(index)] = sorted.get(sorted.size() -1).intValue();
+		sorted.remove(sorted.size() -1);
+		index = index/2;
+		placeAtHalf(index + index/2, ret, sorted);
+		placeAtHalf(index/2, ret, sorted);
 		return ret;
+	}
+	private static void placeAtHalf(float index, int[] ret, ArrayList<Integer> sorted) {
+		if (Math.round(index) == 0) {
+			
+		}
+		else {
+			ret[Math.round(index) + Math.round(index/2)] = sorted.get(sorted.size() -1).intValue();
+			sorted.remove(sorted.size() -1);
+			ret[Math.round(index) - Math.round(index/2)] = sorted.get(sorted.size() -1).intValue();
+			sorted.remove(sorted.size() -1);
+			placeAtHalf(index/2, ret, sorted);
+			placeAtHalf(index/2 + index, ret, sorted);
+		}
 	}
 }
