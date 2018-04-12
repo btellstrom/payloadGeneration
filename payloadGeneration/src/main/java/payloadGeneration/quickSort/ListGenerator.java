@@ -23,12 +23,17 @@ public class ListGenerator {
 	}
 	
 	private static int[] sortList(int[] list, int i) {
-		int[] ret;
+		int[] ret = new int[list.length];
 		if (i == 0) {
 			ret = sortListDescendingOrder(list);
 		}
 		else if(i == 1) {
 			ret = sortWorstCaseMiddle(list);
+		}
+		else if(i ==2) {
+			for (int j = 1; j<list.length; j++) {
+				ret[j] = 1;
+			}
 		}
 		else {
 			ret = list;
@@ -58,7 +63,7 @@ public class ListGenerator {
 			sorted.add(list[i]);
 		}
 		Collections.sort(sorted);
-		for(int i = 0; i < list.length/2; i++) {
+		for(int i = 0; i < Math.round(((float)list.length)/2); i++) {
 			ret[i] = sorted.get(i + list.length/2);
 			ret[i + list.length/2] = sorted.get(i);
 		}
