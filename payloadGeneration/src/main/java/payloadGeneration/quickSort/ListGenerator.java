@@ -56,7 +56,7 @@ public class ListGenerator {
 		ArrayList<Integer> sorted = new ArrayList<Integer>(list.length);
 		Collections.sort(sorted, order);
 		
-		float index = list.length/2;
+		float index = (list.length-1)/2;
 		ret[Math.round(index)] = sorted.get(sorted.size() -1).intValue();
 		sorted.remove(sorted.size() -1);
 		index = index/2;
