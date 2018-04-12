@@ -4,7 +4,7 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import java.util.*;
-import payloadGeneration.hashTable.Main.HashOrder;
+import payloadGeneration.hashTable.HashTableMain.HashOrder;
 
 /**
  * Unit test for simple App.

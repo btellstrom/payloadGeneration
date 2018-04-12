@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.15.10-1-ARCH"/>
+    <property name="os.version" value="4.15.15-1-ARCH"/>
     <property name="library.jansi.path" value="/opt/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/benjamin"/>
     <property name="user.timezone" value="Europe/Stockholm"/>
@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testRetrieveArray" time="0"/>
   <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testSameHash" time="0"/>
+  <testcase classname="payloadGeneration.hashTable.HashtableTest" name="testOutOfBounds" time="0"/>
 </testsuite>
