@@ -58,9 +58,7 @@ public class ListGenerator {
 			sorted.add(list[i]);
 		}
 		Collections.sort(sorted, order);
-		for (int i = 0; i < list.length/2; i++) {
-			ret[i] = sorted.get(sorted.size());
-		}
+
 		float index = (list.length-1)/2;
 		ret[Math.round(index)] = sorted.get(sorted.size() -1).intValue();
 		sorted.remove(sorted.size() -1);
